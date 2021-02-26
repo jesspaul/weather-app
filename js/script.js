@@ -25,9 +25,8 @@ function handleSubmit(evt) {
     const term = $input.val();
     $input.val('');
 
-    $.ajax(`${BASE_URL}?appid=${API_KEY}&q=${term}`)
+    $.ajax(`${BASE_URL}?appid=${API_KEY}&q=${term}&units=imperial`)
     .then(function(data) {
-        console.log(data);
         weatherData = data;
         render();
     }, function(error) {
@@ -38,9 +37,13 @@ function handleSubmit(evt) {
 
 function render() {
     if (weatherData) {
-        $city.text(weatherData.name);
-        $temp.text(weatherData.main.temp);
-        $feelsLike.text(weatherData.main.feels_like);
+        $city.text(`${weatherData.name}, ${weatherData.sys.country}`);
+        $temp.text(`${weatherData.main.temp}° F`);
+        $feelsLike.text(`${weatherData.main.feels_like}° F`);
         $weather.text(weatherData.weather[0].main);
+
+        let $weatherImg = $(`<img src='http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png'>`);
+        console.log($weatherImg)
+        $('#weather').append($weatherImg);
     }
 }

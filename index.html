@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script defer src="./js/script.js"></script>
     <title>Weather App</title>
 </head>
 <body>
     <h1>AJAX Weather App</h1>
-    <p>Weather For: <span class='result' id='city'></span></p>
-    <p>Temperature: <span class='result' id='temp'></span></p>
-    <p>Feels Like: <span class='result' id='feels-like'></span></p>
-    <p>Weather: <span class='result' id='weather'></span></p>
 
-    <form>
-        <label>City Name
-            <input id='user-input' type="text" placeholder="ex: Atlanta"  />
-        </label>
-        <input type="submit" value='Search' />
-    </form>
+    <div id='weather-info'>
+        <p>Weather For: <span class='result' id='city'></span></p>
+        <p>Temperature: <span class='result' id='temp'></span></p>
+        <p>Feels Like: <span class='result' id='feels-like'></span></p>
+        <p>Weather: <span class='result' id='weather'></span></p>
+        
+        <form>
+            <label class='form-label'>City Name:
+                <input id='user-input' type="text" placeholder="ex: Atlanta"  />
+            </label>
+            <input type="submit" value='Search' />
+        </form>
+    </div>
 </body>
 </html>
