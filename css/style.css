@@ -1,26 +1,73 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+    background-image: linear-gradient(#D4E2EC, #95B8D1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
 body {
-    background-color: skyblue;
+    font-size: 20px;
+    font-family: Roboto, Helvetica, sans-serif;
+    color: #0A2342;
+    background-color: transparent;
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 100px;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.center {
+    text-align: center;
 }
 
 #weather-info {
-    width: 40vw;
     margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+}
+
+#weather-info>p {
+    margin: 20px 0;
+}
+
+.result {
+    font-weight: bold;
+}
+
+.weather-img {
+    height: 28px;
+}
+
+form {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* form>input#submit-button {
+    background-color: #0A2342;
+    color: #fff;
+} */
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 70px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 50px;
+        margin-bottom: 10px;
     }
 
     #weather-info {
-        width: 90vw;
-        text-align: center;
         font-size: 20px;
     }
   }

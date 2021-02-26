@@ -16,18 +16,21 @@
 <body>
     <h1>AJAX Weather App</h1>
 
-    <div id='weather-info'>
-        <p>Weather For: <span class='result' id='city'></span></p>
-        <p>Temperature: <span class='result' id='temp'></span></p>
-        <p>Feels Like: <span class='result' id='feels-like'></span></p>
-        <p>Weather: <span class='result' id='weather'></span></p>
-        
-        <form>
-            <label class='form-label'>City Name:
-                <input id='user-input' type="text" placeholder="ex: Atlanta"  />
-            </label>
-            <input type="submit" value='Search' />
-        </form>
+    <div class='center'>
+        <div id='weather-info'>
+            <p>Weather For: <span class='result' id='city'></span></p>
+            <p>Temperature: <span class='result' id='temp'></span></p>
+            <p>Feels Like: <span class='result' id='feels-like'></span></p>
+            <p>Weather: <span class='result' id='weather'></span></p>
+        </div>
+
     </div>
+
+    <form>
+        <label class='form-group'>City Name:
+            <input id='user-input' type="text" placeholder="ex: Atlanta"  />
+        </label>
+        <input type="submit" value='Search' />
+    </form>
 </body>
 </html>

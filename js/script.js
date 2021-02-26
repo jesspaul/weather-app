@@ -42,7 +42,7 @@ function render() {
         $feelsLike.text(`${weatherData.main.feels_like}° F`);
         $weather.text(weatherData.weather[0].main);
 
-        let $weatherImg = $(`<img src='http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png'>`);
+        let $weatherImg = $(`<img class='weather-img' src='http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png'>`);
         console.log($weatherImg)
         $('#weather').append($weatherImg);
     }
