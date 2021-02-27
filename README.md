@@ -18,7 +18,7 @@
 * Display current weather condition
 
 ## Wireframes
-![Wireframe showing app layout design](./weather-app-wireframe)
+![Wireframe showing app layout design](./weather-app-wireframe.png)
 
 ## Stretch Goals
 * Include multiple day forecasts
