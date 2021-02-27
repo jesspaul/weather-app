@@ -9,7 +9,7 @@ html {
     height: 100%;
 }
 body {
-    font-size: 20px;
+    font-size: 18px;
     font-family: Roboto, Helvetica, sans-serif;
     color: #0A2342;
     background-color: transparent;
@@ -23,26 +23,55 @@ h1 {
     margin-bottom: 40px;
 }
 
-.center {
-    text-align: center;
-}
-
 #weather-info {
     margin: 0 auto;
-    display: inline-block;
-    text-align: left;
+    width: 70vw;
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr;
 }
 
-#weather-info>p {
+.section {
     margin: 20px 0;
+    display: flex;
+}
+
+#left {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#middle {
+    align-items: center;
+    justify-content: space-around;
+}
+
+#right {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .result {
     font-weight: bold;
+    font-size: 25px;
+}
+
+.result#city {
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+.temp-section p {
+    margin: 0;
+}
+
+#weather {
+    margin-bottom: 0;
 }
 
 .weather-img {
-    height: 28px;
+    margin-top: 0;
 }
 
 form {
@@ -50,24 +79,50 @@ form {
     text-align: center;
 }
 
-/* form>input#submit-button {
-    background-color: #0A2342;
-    color: #fff;
-} */
+@media only screen and (min-width: 1200px) {
+    #weather-info {
+        width: 50vw;
+    }
+}
 
 @media only screen and (max-width: 800px) {
+    body {
+        font-size: 15px;
+    }
+
     h1 {
         font-size: 70px;
     }
+    
+    .result#city {
+        font-size: 30px;
+    }
+
+    #temp, #feels-like {
+        font-size: 20px;
+    }
 }
+
 
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 50px;
-        margin-bottom: 10px;
     }
 
     #weather-info {
-        font-size: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
     }
-  }
+
+    #middle {
+        justify-content: center;
+    }
+
+    .section {
+        margin: 0;
+    }
+
+    .temp-section {
+        margin: 0 20px 20px 20px;
+    }
+}

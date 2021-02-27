@@ -38,12 +38,21 @@ function handleSubmit(evt) {
 function render() {
     if (weatherData) {
         $city.text(`${weatherData.name}, ${weatherData.sys.country}`);
-        $temp.text(`${weatherData.main.temp}° F`);
-        $feelsLike.text(`${weatherData.main.feels_like}° F`);
+        $temp.text(`${Math.floor(weatherData.main.temp)}° F`);
+        $feelsLike.text(`${Math.floor(weatherData.main.feels_like)}° F`);
         $weather.text(weatherData.weather[0].main);
+        
+        if ($('#right').find('img').length) {
+            $('.weather-img').attr('src', `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`);
+        } else {
+            let $weatherImg = $(`<img class='weather-img' src='http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png'>`);
+            console.log($weatherImg)
+            $('#right').append($weatherImg);
+            
+            let d = new Date().toDateString();
+            $(`<p class='date'>${d}</p>`).insertAfter('#city');
 
-        let $weatherImg = $(`<img class='weather-img' src='http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png'>`);
-        console.log($weatherImg)
-        $('#weather').append($weatherImg);
-    }
-}
+            $('<p>Current<br>Temp:</p>').insertBefore('#temp');
+            $('<p>Feels<br>Like:</p>').insertBefore('#feels-like');
+        }
+    }}

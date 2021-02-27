@@ -14,16 +14,23 @@
     <title>Weather App</title>
 </head>
 <body>
-    <h1>AJAX Weather App</h1>
+    <h1>Weather App</h1>
 
-    <div class='center'>
-        <div id='weather-info'>
-            <p>Weather For: <span class='result' id='city'></span></p>
-            <p>Temperature: <span class='result' id='temp'></span></p>
-            <p>Feels Like: <span class='result' id='feels-like'></span></p>
-            <p>Weather: <span class='result' id='weather'></span></p>
+    <div id='weather-info'>
+        <div class='section' id='left'> 
+            <p class='result' id='city'></p>
         </div>
-
+        <div class='section' id='middle'>
+            <div class='temp-section'>  
+                <p class='result' id='temp'></p>
+            </div>
+            <div class='temp-section'>
+                <p class='result' id='feels-like'></p>
+            </div>
+        </div>
+        <div class='section' id='right'>
+            <p class='result' id='weather'></p>
+        </div>
     </div>
 
     <form>
