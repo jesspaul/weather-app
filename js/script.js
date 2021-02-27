@@ -31,11 +31,15 @@ function handleSubmit(evt) {
         render();
     }, function(error) {
         console.log('Error ', error);
-        render();
+        renderError();
     });
 };
 
 function render() {
+    if ($('body').find('#error-message').length) {
+        $('#error-message').remove();
+    }
+    
     if (weatherData) {
         $city.text(`${weatherData.name}, ${weatherData.sys.country}`);
         $temp.text(`${Math.floor(weatherData.main.temp)}° F`);
@@ -51,8 +55,17 @@ function render() {
             
             let d = new Date().toDateString();
             $(`<p class='date'>${d}</p>`).insertAfter('#city');
-
+            
             $('<p>Current<br>Temp:</p>').insertBefore('#temp');
             $('<p>Feels<br>Like:</p>').insertBefore('#feels-like');
         }
-    }}
+    }
+}
+
+function renderError() {
+    if (!$('body').find('#error-message').length) {
+        let $errorMessage = $('<p id="error-message">Sorry, city not found. Check spelling and try again.</p>');
+        $('body').append($errorMessage);
+    }
+
+}
